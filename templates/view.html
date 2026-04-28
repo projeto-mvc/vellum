@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Aluno - Gestão de Alunos</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Detalhes do Aluno</h1>
+            <a href="/" class="btn-secondary">Voltar para a Lista</a>
+        </header>
+
+        <main class="card">
+            <div class="info-group">
+                <label>Nome Completo:</label>
+                <p>{{ aluno.nome }}</p>
+            </div>
+
+            <div class="info-group">
+                <label>Email:</label>
+                <p>{{ aluno.email }}</p>
+            </div>
+
+            <div class="info-group">
+                <label>Curso:</label>
+                <p>{{ aluno.curso }}</p>
+            </div>
+
+            <hr>
+
+            <div class="actions">
+                <a href="/edit/{{ aluno.id }}" class="btn-edit">Editar Dados</a>
+                <form action="/delete/{{ aluno.id }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn-delete" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir Aluno</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

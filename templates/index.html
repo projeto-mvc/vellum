@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><b>GESTÃO DE ALUNOS</b></h1>
+    </header>
+
+    <input name="nome">
+    <input name="email">
+    <input name="curso_id">
+
+    {% for aluno in context %}
+    <p>{{ aluno.nome }} - {{ aluno.email }}</p>
+
+    <a href="/edit/{{ aluno.id }}">
+        <button>Editar</button>
+    </a>
+    {% endfor %}
+
+    <a href="/view/{{ aluno.id }}">Visualizar</a>
+
+
+</body>
+
+</html>
